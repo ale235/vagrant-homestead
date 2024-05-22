@@ -28,7 +28,12 @@ git checkout release
 1.4 
 
 ```bash
+//En caso de linux
 bash init.sh
+```
+```bash
+//En caso de windows
+.\init.bat
 ```
 
 #Levantar la VM
@@ -54,6 +59,17 @@ Correr
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "acolautti@homestead"
+```
+#Modificar el Homestead.yml con el mapeo
+```
+folders:
+  - map: C:/Github/Ale/zeus
+    to: /home/vagrant/code
+
+```
+Siempre luego de moficiar el Homesteard yml hay que correr el provision
+```
+vagrant reload --provision
 ```
 
 ```bash
